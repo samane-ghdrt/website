@@ -3,7 +3,13 @@ async function weather() {
     const dat= await fetch(url);
 
     const data=await dat.json();
-    console.log(data.current.pressure);
-    
+    console.log(data.current);
+ liEl1.textContent= `observation_time: ${data.current.observation_time}`;
+ liEl2.textContent= `temperature:${data.current.temperature}`;  
 }
 weather();
+const liEl1=document.querySelector('.li1');
+const liEl2=document.querySelector('.li2');
+const liEl3=document.querySelector('.li3');
+
+// liEl1.textContent= data.current.observation_time
